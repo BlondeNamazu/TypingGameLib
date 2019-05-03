@@ -977,5 +977,10 @@ function createWordMap(){
       });
     });
   }/*}}}*/
+
+  for(var k in wordmap){
+    wordmap[k].sort()
+    wordmap[k].sort((a,b)=>{return a.length-b.length})
+  }
   return wordmap;
 }
