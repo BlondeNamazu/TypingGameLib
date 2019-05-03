@@ -204,6 +204,8 @@ function createWordMap(){
   wordmap["りょ"] = [];
   wordmap["わ"] = [];
   wordmap["を"] = [];
+  wordmap["っい"] = [];
+  wordmap["っう"] = [];
   wordmap["っうぁ"] = [];
   wordmap["っうぃ"] = [];
   wordmap["っうぇ"] = [];
@@ -403,8 +405,11 @@ function createWordMap(){
   wordmap["っりょ"] = [];
   wordmap["わ"] = [];
   wordmap["を"] = [];
+  wordmap["っわ"] = [];
+  wordmap["っを"] = [];
   wordmap["ん"] = [];
-  wordmap["ゎ"] = [];/*}}}*/
+  wordmap["ゎ"] = [];
+  wordmap["っゎ"] = [];/*}}}*/
   wordmap["あ"].push("a");/*{{{*/
   wordmap["い"].push("i");
   wordmap["う"].push("u");
