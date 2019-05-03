@@ -949,5 +949,33 @@ function createWordMap(){
   wordmap["っゎ"].push("lwa");
   wordmap["っゎ"].push("xwa");/*}}}*/
 
+  for(var k in wordmap){/*{{{*/
+    if(k.length!=2) continue;
+    var lhs = wordmap[k[0]];
+    var rhs = wordmap[k[1]];
+    lhs.forEach(l =>{
+      rhs.forEach(r => {
+        wordmap[k].push(l+r);
+      });
+    });
+  }/*}}}*/
+  for(var k in wordmap){/*{{{*/
+    if(k.length!=3) continue;
+    var lhs,rhs;
+    lhs = wordmap[k[0]];
+    rhs = wordmap[k[1]+k[2]];
+    lhs.forEach(l =>{
+      rhs.forEach(r => {
+        wordmap[k].push(l+r);
+      });
+    });
+    lhs = wordmap[k[0]+k[1]];
+    rhs = wordmap[k[2]];
+    lhs.forEach(l =>{
+      rhs.forEach(r => {
+        wordmap[k].push(l+r);
+      });
+    });
+  }/*}}}*/
   return wordmap;
 }
