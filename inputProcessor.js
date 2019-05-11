@@ -1,12 +1,9 @@
 class InputProcessor{
-  init() {
-    this.words = [
-      "あいうえお",
-      "わっちゃっしゃっほい",
-      "あっし",
-      "ふにゃっ",
-      "まちがえちゃった"
-    ];
+  init(word) {
+    console.log(word);
+    this.words = word.split("\n");
+    console.log(this.words);
+    this.words.pop();
     this.wordmap = createWordMap();
     this.currentWords = [];
     this.counter = 0;
@@ -83,9 +80,9 @@ class InputProcessor{
       }
     }else{
       // miss type
-      console.log("error");
+      console.log("miss type!");
       return {
-        state: "error"
+        state: "miss"
       }
     }
   }

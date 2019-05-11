@@ -1,8 +1,5 @@
-let ip = new InputProcessor();
-processKey(ip.init());
-
 function processKey(ret){
-  if(ret.state=="alreadycleared" || ret.state=="error"){
+  if(ret.state=="alreadycleared" || ret.state=="miss"){
     return;
   }
   if(ret.state=="init" || ret.state=="ongame" || ret.state=="cleared"){
@@ -15,5 +12,14 @@ function processKey(ret){
 function onKeyDown(){
   processKey(ip.process(event.key));
 }
+
+let ip = new InputProcessor();
+let xhr = new XMLHttpRequest();
+xhr.open("GET","wordlist.csv",true);
+xhr.onload = function(){
+  console.log(xhr.responseText);
+  processKey(ip.init(xhr.responseText));
+}
+xhr.send();
 
 document.onkeydown = onKeyDown;
